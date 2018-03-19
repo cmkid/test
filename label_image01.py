@@ -71,12 +71,7 @@ if __name__ == "__main__":
   labels = model.load_labels(label_file)
 
   while True:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--image", help="image to be processed")
-    args = parser.parse_args()
-
-    if args.image:
-      file_name = args.image
+    file_name = input("image?")
     
     t = threading.Thread(target=run_inference, args=(graph, labels, file_name,))
     t.start()
