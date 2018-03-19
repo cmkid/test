@@ -71,7 +71,7 @@ if __name__ == "__main__":
   labels = model.load_labels(label_file)
 
   while True:
-    file_name = input("image?")
+    file_name = input()
     
     t = threading.Thread(target=run_inference, args=(graph, labels, file_name,))
     t.start()
